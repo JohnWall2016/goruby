@@ -13,6 +13,7 @@ func NewMainEnvironment() Environment {
 	env := classes.Clone()
 	env.Set("self", &Self{RubyObject: &Object{}, Name: "main"})
 	env.SetGlobal("$LOADED_FEATURES", NewArray())
+	env.SetGlobal("$:", NewArray())
 	return env
 }
 
